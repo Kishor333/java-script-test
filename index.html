@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="stylesheet" type="text/css" href="./style/button.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <script type="module" src="./index.js"></script>
+
+    <!-- <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script> -->
+    
+</head>
+<body>
+    
+    <section class="w-full flex justify-center items-center">
+        <section class="form-container">
+            <div class="mb-8">
+                <h1 class="text-3xl m-auto w-fit text-primary mb-1">Register</h1>
+                <p class="m-auto w-fit text-primary">Please fill up this form to continue with us</p>
+            </div>
+            <form >
+                <div class="relative rounded-full bg-gradient-to-r from-pink-200 to-pink-300 hover:scale-105 mb-8">
+                    <input type="text" class="border-none bg-transparent hy-text placeholder-gray-500 w-full pl-10 py-2"
+                     placeholder="Name"
+                      name="name" id="name">
+                </div>
+                <div class="flex">
+                    <div class="w-1/2 mr-1 relative rounded-full bg-gradient-to-r from-pink-200 to-pink-300 hover:scale-105">
+                        <input type="text" class="border-none bg-transparent hy-text placeholder-gray-500 w-full pl-10 py-2"
+                         placeholder="eg@email.com"
+                          name="email" id="email">
+                    </div>
+    
+                    <div class="w-1/2 ml-1 relative rounded-full bg-gradient-to-r from-pink-300 to-pink-200 hover:scale-105">
+                        <input type="password" class="border-none bg-transparent hy-text placeholder-gray-500 w-full pl-10 py-2"
+                         placeholder="*****"
+                          name="password" id="password">
+                    </div>
+                </div>
+
+                <hr class="my-8">
+
+                <p class="w-fit text-gray-400 m-auto">By creating an account you are aggree to our 
+                    <a href="https://i.gifer.com/1F2.gif" class="text-primary cursor-pointer">Terms & Privacy</a>
+                </p>
+
+                <p class="w-fit text-gray-400 m-auto cursor-pointer mt-2 relative" style="z-index: 10;">
+                    <a href="/login-form.html" class="text-primary cursor-pointer">Already have an account?</a>
+                </p>
+
+            
+                <div class="button mt-16">
+                    <input id='button' type='checkbox'>
+                    <label type="button" id="submitData" for='button'>
+                      <div class='button_inner q'>
+                        <i class='l ion-log-in'></i>
+                        <span class='t'>SignIn</span>
+                        <span>
+                          <i class='tick ion-checkmark-round'></i>
+                        </span>
+                        <div class='b_l_quad' id="b_l_quad">
+                         
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  
+            </form>
+        </section>
+    </section>
+
+
+    <!-- <img src="/node_modules/@firebase/app/" alt=""> -->
+</body>
+
+<script type="module" >
+    const parentDiv = document.getElementById('b_l_quad');
+    
+    for (let i = 0; i < 52; i++) {
+        const buttonSpotDiv = document.createElement("div");
+         buttonSpotDiv.classList.add("button_spots");
+         parentDiv.appendChild(buttonSpotDiv);
+    };
+    
+ </script>
+</html>

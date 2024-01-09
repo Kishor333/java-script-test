@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="stylesheet" type="text/css" href="./style/button.css">
+    <link rel="stylesheet" type="text/css" href="./style/navbar.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <script type="module" src="./index.js"></script>
+
+    <style>
+        .svg-container {
+            height: 50dvh;
+            width: 100%;
+            background-color: aliceblue;
+        }
+        svg {
+            width: 100%;
+            height: 50dvh;
+        }
+        svg text {
+            font-size: 4rem;
+            stroke-width: 2;
+        }
+        svg text.text-body {
+            stroke: yellow;
+        }
+
+    </style>
+
+</head>
+<body>
+    <section class="nav-container">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Portefolio</a>
+            <a href="#">Contact</a>
+            <a href="#" type="button" id="logout" class="logout">Log Out</a>
+            <div class="animation start-home"></div>
+          </nav>
+    </section>
+    
+    <section class="svg-container">
+        <svg id="svgg" view-box="0 0 500 160">
+            <text x="50%" y="40%" dy=".32rem" text-anchor="middle" class="text-body">
+                hello
+            </text>
+            <text x="50%" y="70%" dy=".32rem" text-anchor="middle" class="text-body" id="realName">
+                everybody
+            </text>
+
+        </svg>
+        <h1 id="hello" class="text-primary">hello</h1>
+    </section>
+  
+
+   
+</body>
+
+<script type="module" >
+    // let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+    // let userCred =JSON.parse(sessionStorage.getItem("userCred"));
+    
+
+    const parentDiv = document.getElementById('hello');
+    const logoutButton = document.getElementById('logout');
+    const userName = document.getElementById('realName');
+    console.log(userName)
+
+    // userName.innerText = `${userInfo.name}`;
+
+    logoutButton.addEventListener('click', () => {
+        sessionStorage.removeItem("userInfo");
+        sessionStorage.removeItem("userCred");
+        window.location.href = "/login-form.html";
+    })
+
+    // parentDiv.innerText = `${userInfo.name}`
+    // for (let i = 0; i < 52; i++) {
+    //     const buttonSpotDiv = document.createElement("div");
+    //      buttonSpotDiv.classList.add("button_spots");
+    //      parentDiv.appendChild(buttonSpotDiv);
+    // };
+    
+    
+ </script>
+</html>

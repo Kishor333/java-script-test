@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --vivid-pink : oklch(69.02% .277 332.77);
+
+    --pink-to-purple-vertical-gradient: linear-gradient( 0deg, oklch(53.18% .28 296.97) 0%, oklch(69.02% .277 332.77) 100% );
+
+    --pur-gra : linear-gradient( 0deg, oklch(53.18% .28 296.97) 0%, oklch(69.02% .277 332.77) 100% );
+}
+
+.text-primary {
+        background:  var(--pur-gra) !important;
+        background-clip: text !important;
+        -webkit-background-clip: text !important;
+        color: transparent !important;
+}
+
+input:focus-visible {
+    outline: none !important;
+}
+
+body {
+    /* background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%); */
+    background: #2C3940;
+}
+
+
+/* form */
+
+.form-container {
+    width: 600px;
+    margin-top: 100px;
+}
+.w-fit {
+    width: fit-content;
+}
+
+
+
+
+
+
