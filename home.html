@@ -1,95 +1,447 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS</title>
-    <link rel="stylesheet" type="text/css" href="./index.css">
-    <link rel="stylesheet" type="text/css" href="./style/button.css">
-    <link rel="stylesheet" type="text/css" href="./style/navbar.css">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <link rel="stylesheet" type="text/css" href="./style/button.css" />
+    <link rel="stylesheet" type="text/css" href="./style/navbar.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
 
     <script type="module" src="./index.js"></script>
+    
 
     <style>
-        .svg-container {
-            height: 50dvh;
-            width: 100%;
-            background-color: aliceblue;
-        }
-        svg {
-            width: 100%;
-            height: 50dvh;
-        }
-        svg text {
-            font-size: 4rem;
-            stroke-width: 2;
-        }
-        svg text.text-body {
-            stroke: yellow;
+        /* body {
+            background-color: transparent;
+        } */
+        :root {
+            --loader-text: #f6e9fe;
         }
 
+        body {
+            color: var(--loader-text);
+        }
+      .svg-container {
+        position: relative;
+        z-index: 9;
+        height: 50dvh;
+        width: 100%;
+        /* background-color: rgb(36, 37, 39); */
+        background-color: transparent;
+      }
+      /* .svg-circle {
+        height: 100%;
+      } */
+      svg {
+        width: 100%;
+        height: 50dvh;
+      }
+      svg text {
+        font-size: 6rem;
+        stroke-width: 3;
+        letter-spacing: -2px;
+      }
+      svg text.text-body {
+        stroke: var(--loader-text);
+        animation: 10s forwards alternate animate-stroke;
+      }
+      svg g path {
+        display: none;
+      }
+
+      @keyframes animate-stroke {
+          0% {
+            fill: transparent;
+            stroke: var(--loader-text);
+            stroke-width: 3;
+            stroke-dashoffset: 25%;
+            stroke-dasharray: 0 32%;
+          }
+          50% {
+            fill: transparent;
+            stroke: var(--loader-text);
+            stroke-width: 3;
+
+          }
+          80% , 100%{
+            fill: var(--loader-text);
+            stroke: transparent;
+            stroke-width: 0;
+            stroke-dashoffset: -25%;
+            stroke-dasharray: 32% 0;
+          }
+      }
+      .nav-container {
+        position: relative;
+        z-index: 9;
+      }
+
+      /* magnetic button */
+
+      .magneto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        order: none;
+        background-color: rgb(91, 91, 170);
+        color: #fff;
+        cursor: pointer;
+
+      }
+      #debugger {
+        display: none;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #312f2f;
+        color: #fff;
+        padding: 2rem;
+        width: 20rem;
+      }
+
+      /* Lenes */
+
+      html.lenis {
+            height: auto;
+            }
+
+            .lenis.lenis-smooth {
+            scroll-behavior: auto;
+            }
+
+            .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+            }
+
+            .lenis.lenis-stopped {
+            overflow: hidden;
+            }
+
+            .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+            }
+
+
+            .cont-scroller {
+                overflow-x: hidden;
+            }
+
+            .cont {
+                display: flex;
+                padding: 24px;
+                justify-content: space-between;
+                border-radius: 8px;
+                margin-top: 24px;
+            }
+            .cont-1 {
+                padding: 24px;
+                width: 49%;
+                background-color: wheat;
+                height: 400px;
+                border-radius: 8px;
+            }
+            .cont-2 {
+                padding: 24px;
+                width: 49%;
+                background-color: #f6e9fe;
+                height: 400px;
+                border-radius: 8px;
+
+            }
+
+            .main-section {
+                height: 100dvh;
+            }
     </style>
-
-</head>
-<body>
+  </head>
+  <body>
     <section class="nav-container">
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-            <a href="#">Portefolio</a>
-            <a href="#">Contact</a>
-            <a href="#" type="button" id="logout" class="logout">Log Out</a>
-            <div class="animation start-home"></div>
-          </nav>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Portefolio</a>
+        <a href="#">Contact</a>
+        <a href="#" type="button" id="logout" class="logout">Log Out</a>
+        <div class="animation start-home"></div>
+      </nav>
     </section>
-    
-    <section class="svg-container">
-        <svg id="svgg" view-box="0 0 500 160">
-            <text x="50%" y="40%" dy=".32rem" text-anchor="middle" class="text-body">
+    <!-- <section class="main-bg">
+        <div class="main-bg-back-1"></div>
+        <div class="main-bg-back-2"></div>
+        <div class="main-bg-back-1"></div>
+    </section> -->
+
+    <section class="main-section">
+        <section class="svg-container">
+            <svg view-box="0 0 500 160">
+              <g>
+                <path
+                  id="label1"
+                  class="s"
+                  d="M452,408h-56c-4.42,0-8-3.58-8-8l0,0c0-4.42,3.58-8,8-8h56c4.42,0,8,3.58,8,8l0,0     C460,404.42,456.42,408,452,408z"
+                />
+                <text
+                  x="50%"
+                  y="40%"
+                  dy=".32rem"
+                  text-anchor="middle"
+                  class="text-body"
+                >
+                  Hello!!!
+                </text>
+              </g>
+            </svg>
+      
+            <!-- <h1 id="hello" class="text-primary">hello</h1> -->
+      
+            
+    </section>
+    <section class="flex justify-center magnetic-items">
+        <button class="magneto mr-4">
+            <span class="magneto-text">
+                Our text
+            </span>
+        </button>
+        <button class="magneto">
+            <span class="magneto-text">
+                Our text
+            </span>
+        </button>
+        <div id="debugger"></div>
+      </section>
+    </section>
+
+    <!-- Lenes scroll -->
+    <section class="cont-scroller">
+        <div class="cont entry">
+            <div class="cont-1 entry__meta">skdnfkjn</div>
+            <div class="cont-2 entry__media">
                 hello
-            </text>
-            <text x="50%" y="70%" dy=".32rem" text-anchor="middle" class="text-body" id="realName">
-                everybody
-            </text>
+            </div>
+        </div>
 
-        </svg>
-        <h1 id="hello" class="text-primary">hello</h1>
+        <div class="cont entry mt-6">
+            <div class="cont-1 entry__meta">skdnfkjn</div>
+            <div class="cont-2 entry__media">
+                hello
+            </div>
+        </div>
     </section>
-  
 
-   
-</body>
 
-<script type="module" >
-    // let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
-    // let userCred =JSON.parse(sessionStorage.getItem("userCred"));
+
+  </body>
+
+<!-- Script -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+
+<!-- Scroll animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+<!-- basic -->
+  <script type="module">
     
+    let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+    let userCred =JSON.parse(sessionStorage.getItem("userCred"));
 
-    const parentDiv = document.getElementById('hello');
     const logoutButton = document.getElementById('logout');
-    const userName = document.getElementById('realName');
-    console.log(userName)
+    const userName = userInfo?.name;
 
-    // userName.innerText = `${userInfo.name}`;
 
-    logoutButton.addEventListener('click', () => {
-        sessionStorage.removeItem("userInfo");
-        sessionStorage.removeItem("userCred");
-        window.location.href = "/login-form.html";
+    logoutButton.addEventListener("click", () => {
+      sessionStorage.removeItem("userInfo");
+      sessionStorage.removeItem("userCred");
+      window.location.href = "/login-form.html";
+    });
+
+    //user Name in Svg
+    let label1 = document.querySelector("#label1");
+
+    addLabelText(label1, `${userName}`);
+
+    function addLabelText(bgPath, labelText) {
+      let bbox = bgPath.getBBox();
+    //   let x = 50;
+    //   let y = 70;
+
+      // Create a <text> element
+      let textElem = document.createElementNS(bgPath.namespaceURI, "text");
+      textElem.setAttribute("x", "50%");
+      textElem.setAttribute("y", "70%");
+      // Centre text horizontally at x,y
+      textElem.setAttribute("text-anchor", "middle");
+      // Give it a class that will determine the text size, colour, etc
+      textElem.classList.add("text-body");
+      // Set the text
+      textElem.textContent = labelText;
+      // Add this text element directly after the label background path
+      bgPath.after(textElem);
+    }
+  </script>
+
+  <!-- magneto -->
+  <script>
+    // const magneto = document.querySelector('.magneto');
+    // const magnetoText = document.querySelector('.magneto-text');
+    const dbgr = document.querySelector('#debugger');   
+
+    const allMagneto = document.querySelectorAll('.magneto');
+    // console.log(allMagneto)
+
+    allMagneto.forEach( magnetButton => {
+
+        // let magneto = magnetButton.querySelectorAll('.magneto');
+        let magnetoText = magnetButton.querySelectorAll('.magneto-text');
+
+        // console.log(magneto);
+
+
+        //mouse move stuff
+        let activateMagneto = (event) => {
+            //get position of the element(magneto) along with h and w
+            let boundBox = magnetButton.getBoundingClientRect();
+            const magnetoStrength = 40;
+            const magnetoTextStrength = 80;
+
+            const newX = ((event.clientX - boundBox.left)/ magnetButton.offsetWidth) - 0.5;
+            const newY = ((event.clientY - boundBox.top)/ magnetButton.offsetHeight) - 0.5;
+
+            //move button new position
+            gsap.to(magnetButton, {
+                duration: 1,
+                x: newX * magnetoStrength,
+                y: newY * magnetoStrength,
+                ease: Power4.easeOut
+            });
+            //move button text new position
+            gsap.to(magnetoText, {
+                duration: 1,
+                x: newX * magnetoTextStrength,
+                y: newY * magnetoTextStrength,
+                ease: Power4.easeOut
+            });
+
+            dbgr.innerHTML = 'cursorX: ' + event.clientX
+                            + '<br> boxLeft: ' + Math.ceil(boundBox.left)
+                            + '<br> CursorInsideButton: ' + Math.ceil(event.clientX - boundBox.left)
+                            + '<br> relative to total width: ' + ((event.clientX - boundBox.left)/ magnetButton.offsetWidth).toFixed(2)
+                            + '<br> shifted: ' + ((event.clientX - boundBox.left)/ magnetButton.offsetWidth - 0.5).toFixed(2)
+        }
+
+        //mouse leave action
+
+        const resetMagneto = (event) => {
+
+            //move button new position
+            gsap.to(magnetButton, {
+                duration: 1,
+                x: 0,
+                y: 0,
+                ease: Power4.easeOut
+            });
+            //move button text new position
+            gsap.to(magnetoText, {
+                duration: 1,
+                x: 0,
+                y: 0,
+                ease: Power4.easeOut
+            }); 
+
+        
+     }
+
+     magnetButton.addEventListener('mousemove', activateMagneto);
+     magnetButton.addEventListener('mouseleave', resetMagneto);
+
+
     })
 
-    // parentDiv.innerText = `${userInfo.name}`
-    // for (let i = 0; i < 52; i++) {
-    //     const buttonSpotDiv = document.createElement("div");
-    //      buttonSpotDiv.classList.add("button_spots");
-    //      parentDiv.appendChild(buttonSpotDiv);
-    // };
-    
-    
- </script>
+
+   
+    // magneto.addEventListener('mousemove', activateMagneto);
+    // magneto.addEventListener('mouseleave', resetMagneto);
+  </script>
+
+<!-- Lenes smooth Srolling -->
+<script>
+
+        const entries = document.querySelectorAll('.entry');
+        
+        entries.forEach(entry => {
+            let entryMeta = entry.querySelectorAll('.entry__meta');
+            let entryMedia = entry.querySelectorAll('.entry__media');
+
+            // gsap.set(entryMeta, {
+            //     xPercent: -100,
+            //     opacity: 0
+            // });
+            // gsap.set(entryMedia, {
+            //     xPercent: 100,
+            //     opacity: 0
+            // });
+
+            // gsap.to(entryMeta, {
+            //     scrollTrigger: {
+            //         trigger: entry,
+            //         start: 'top bottom',
+            //         end: 'bottom 90%',
+            //         markers: true,
+            //         scrub : true
+            //     },
+            //     xPercent: 0,
+            //     opacity: 1
+            // });
+
+            // gsap.to(entryMedia, {
+            //     scrollTrigger: {
+            //         trigger: entry,
+            //         start: 'top bottom',
+            //         end: 'bottom 90%',
+            //         markers: true,
+            //         scrub : true
+            //     },
+            //     xPercent: 0,
+            //     opacity: 1
+            // });
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: entry,
+                    start : 'top bottom',
+                    end: 'bottom 100%',
+                    scrub : true,
+                    // markers: true,
+                }
+            });
+            
+            tl.fromTo(entryMeta, { xPercent:-110, opacity: 0 },{ xPercent:0, opacity: 1 });
+            tl.fromTo(entryMedia, { xPercent:100, opacity: 0 },{ xPercent:0, opacity: 1 },'<');
+
+        })
+        const lenis = new Lenis()
+
+        lenis.on('scroll', ScrollTrigger.update)
+
+        gsap.ticker.add((time)=>{
+        lenis.raf(time * 1000)
+        })
+
+        gsap.ticker.lagSmoothing(0)
+</script>
+
 </html>

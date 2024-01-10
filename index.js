@@ -2,18 +2,18 @@
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
-    createUserWithEmailAndPassword,
-    getAuth,
-    signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 import {
-    child,
-    get,
-    getDatabase,
-    ref,
-    set,
-    update,
+  child,
+  get,
+  getDatabase,
+  ref,
+  set,
+  update,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 // import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -63,9 +63,14 @@ if (window.location.pathname === "/index.html") {
             email: email,
             password: password,
           })
-            .then(() => {
+          .then(() => {
               //data saved
               alert("Hello: User created successfully");
+              
+          })
+            .then(()=>{
+              console.log('killer' + user.uid, user);
+              setSession(user.uid, user);
             })
             .catch((error) => {
               //error
@@ -73,6 +78,7 @@ if (window.location.pathname === "/index.html") {
               alert("Hello: User creation failed");
             });
         })
+        
         .catch((error) => {
           var errorCode = error.code;
           var errorMessage = error.message;
@@ -106,26 +112,11 @@ if (window.location.pathname === "/login-form.html") {
 
           update(ref(database, 'users/' + user.uid), {
               lastLogin : lgDate,
-          })
-          
-          const dbRef = ref(getDatabase());
-          get(child(ref(database), "users/" + user.uid)).then((snapshot) => {
-            console.log("here it is after login");
-            if (snapshot.exists()) {
-              sessionStorage.setItem(
-                "userInfo",
-                JSON.stringify({
-                  name: snapshot.val().userName,
-                  // loginTime: snapshot.val().lastLogin
-                })
-              );
-
-              sessionStorage.setItem("userCred", JSON.stringify(userCredential.user));
-              window.location.href="/home.html";
-            } else {
-              console.log("nooo");
-            }
           });
+
+          setSession(user.uid, user);
+          
+          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -133,6 +124,28 @@ if (window.location.pathname === "/login-form.html") {
           console.log(errorMessage);
         });
     }
+
+
+  });
+};
+// const dbRef = ref(getDatabase());
+  
+function setSession(uid, user)  {
+  get(child(ref(database), "users/" + uid)).then((snapshot) => {
+    
+    if (snapshot.exists()) {
+      sessionStorage.setItem(
+        "userInfo",
+        JSON.stringify({
+          name: snapshot.val().userName,
+          // loginTime: snapshot.val().lastLogin
+        })
+      );
+
+      sessionStorage.setItem("userCred", JSON.stringify(user));
+      window.location.href="/home.html";
+    } else {
+      console.log("nooo");
+    }
   });
 }
-
