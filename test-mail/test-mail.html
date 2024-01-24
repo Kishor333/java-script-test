@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./index.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./style/button.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./style/navbar.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./style/home.css" /> -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    
+
+    <!-- <script type="module" src="./index.js"></script> -->
+
+    <style>
+      
+    </style>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){
+        emailjs.init("vDiu-z-7hgTjm1yDf");
+        })();
+</script>
+  </head>
+  <body>
+    <section class="nav-container">
+        <nav>
+          <a href="/home.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Portefolio</a>
+          <a href="/contact-us.html">Contact</a>
+          <a href="#" type="button" id="logout" class="logout">Log Out</a>
+          <div class="animation start-home"></div>
+        </nav>
+      </section>
+    <section>
+    
+          <form id="contactForm">
+            <label for="yourName">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="yourEmail">Your Email:</label>
+            <input type="email" id="yourEmail" name="yourEmail" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button  id="btn">Send Email</button>
+        </form>
+    </body>
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script >
+
+    function sendMail1() {
+        console.log('clicked')
+    }
+
+
+var btn = document.getElementById('btn');
+
+btn.addEventListener('click', function(e) {debugger
+    e.preventDefault();
+    console.log('hello');
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('yourEmail').value;
+    var message = document.getElementById('message').value;
+    var body = 'name:' + name + '<br/> email:' + email + '<br/> message:' + message;
+
+    Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "kishorkumarmongar@gmail.com",
+    Password : "wjig iecv tggp nihm",
+    To : 'kishorkumarmongar@gmail.com',
+    From : email,
+    Subject : "This is the subject",
+    Body : body
+    }).then(
+    message => alert(message)
+    );
+})
+
+
+
+
+
+//     async function sendMail() {
+//   debugger
+//   const name = document.getElementById('name').value;
+//   const email = document.getElementById('yourEmail').value;
+//   const message = document.getElementById('message').value;
+
+//   const params = {
+//     name,
+//     email,
+//     message,
+//   };
+
+//   const serviceID = 'service_n0rubd9';
+//   const tempID = 'template_goenhgl';
+
+//   try {
+//     const res = await emailjs.send(serviceID, tempID, params);
+//     debugger
+//     document.getElementById('name').value = "";
+//     document.getElementById('yourEmail').value = "";
+//     document.getElementById('message').value = "";
+//     console.log(res);
+//     alert("your message sent successfully");
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
+
+    // function sendMail() {
+    //     // debugger
+    //     var params = {
+    //         name : document.getElementById('name').value,
+    //         email : document.getElementById('yourEmail').value,
+    //         message : document.getElementById('message').value,
+
+    //     }
+    
+    // const serviceID = 'service_n0rubd9';
+    // const tempID = 'template_goenhgl';
+
+    // emailjs.send(serviceID,tempID,params)
+    // .then(
+    //     (res) => {
+    //         // debugger
+    //         document.getElementById('name').value = "";
+    //         document.getElementById('yourEmail').value = "";
+    //         document.getElementById('message').value = "";
+
+    //         console.log(res);
+    //         alert("your message sent successfully");
+    //     }
+    // )
+    // .catch(err => {
+    //     console.log(err);
+    // });
+
+// }
+  </script>
+</html>

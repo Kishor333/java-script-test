@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS</title>
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./style/button.css" /> -->
+    <link rel="stylesheet" type="text/css" href="./style/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="./style/home.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    
+
+    <!-- <script type="module" src="./index.js"></script> -->
+
+    <style>
+      table {
+        width: 100%;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        color: black;
+      }
+      .footer--TjKhNYZ,.byVismeButton--PYBh3EN  {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="nav-container">
+        <nav>
+          <a href="/home.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Portefolio</a>
+          <a href="/contact-us.html">Contact</a>
+          <a href="#" type="button" id="logout" class="logout">Log Out</a>
+          <div class="animation start-home"></div>
+        </nav>
+      </section>
+    <section>
+      <!-- <div
+        class="visme_d"
+        data-title="Photography Contact Form"
+        data-url="w473j0jz-photography-contact-form"
+        data-domain="forms"
+        data-full-page="false"
+        data-min-height="500px"
+        data-form-id="12254"
+      ></div>
+      <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script> -->
+
+      <div class="visme_d" data-title="Customer Contact Form" data-url="kk1dxno7-customer-contact-form" data-domain="forms" data-full-page="false" data-min-height="500px" data-form-id="12258"></div><script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>    </section>
+
+    <!-- <button class="killer" id="killer">killer</button> -->
+  </body>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+<!-- Scroll animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+
+  <script >
+    const logoutButton = document.getElementById('logout');
+   const useless = document.querySelector('.footer--TjKhNYZ');
+   
+   logoutButton.addEventListener("click", () => {
+      sessionStorage.removeItem("userInfo");
+      sessionStorage.removeItem("userCred");
+      window.location.href = "/login-form.html";
+    });
+
+  </script>
+</html>

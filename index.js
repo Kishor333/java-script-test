@@ -105,7 +105,7 @@ if (window.location.pathname === "/login-form.html") {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          alert("Hello: User logged in successfully" + user.uid);
+          // alert("Hello: User logged in successfully" + user.uid);
           // ...
           console.log(auth.currentUser.uid);
           var lgDate = new Date();
@@ -121,7 +121,7 @@ if (window.location.pathname === "/login-form.html") {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorMessage);
+          alert(errorMessage)
         });
     }
 

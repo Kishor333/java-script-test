@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./index.css" />
     <link rel="stylesheet" type="text/css" href="./style/button.css" />
     <link rel="stylesheet" type="text/css" href="./style/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="./style/home.css" />
     <link
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
@@ -20,150 +21,6 @@
     
 
     <style>
-        /* body {
-            background-color: transparent;
-        } */
-        :root {
-            --loader-text: #f6e9fe;
-        }
-
-        body {
-            color: var(--loader-text);
-        }
-      .svg-container {
-        position: relative;
-        z-index: 9;
-        height: 50dvh;
-        width: 100%;
-        /* background-color: rgb(36, 37, 39); */
-        background-color: transparent;
-      }
-      /* .svg-circle {
-        height: 100%;
-      } */
-      svg {
-        width: 100%;
-        height: 50dvh;
-      }
-      svg text {
-        font-size: 6rem;
-        stroke-width: 3;
-        letter-spacing: -2px;
-      }
-      svg text.text-body {
-        stroke: var(--loader-text);
-        animation: 10s forwards alternate animate-stroke;
-      }
-      svg g path {
-        display: none;
-      }
-
-      @keyframes animate-stroke {
-          0% {
-            fill: transparent;
-            stroke: var(--loader-text);
-            stroke-width: 3;
-            stroke-dashoffset: 25%;
-            stroke-dasharray: 0 32%;
-          }
-          50% {
-            fill: transparent;
-            stroke: var(--loader-text);
-            stroke-width: 3;
-
-          }
-          80% , 100%{
-            fill: var(--loader-text);
-            stroke: transparent;
-            stroke-width: 0;
-            stroke-dashoffset: -25%;
-            stroke-dasharray: 32% 0;
-          }
-      }
-      .nav-container {
-        position: relative;
-        z-index: 9;
-      }
-
-      /* magnetic button */
-
-      .magneto {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 8rem;
-        height: 8rem;
-        border-radius: 50%;
-        order: none;
-        background-color: rgb(91, 91, 170);
-        color: #fff;
-        cursor: pointer;
-
-      }
-      #debugger {
-        display: none;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background-color: #312f2f;
-        color: #fff;
-        padding: 2rem;
-        width: 20rem;
-      }
-
-      /* Lenes */
-
-      html.lenis {
-            height: auto;
-            }
-
-            .lenis.lenis-smooth {
-            scroll-behavior: auto;
-            }
-
-            .lenis.lenis-smooth [data-lenis-prevent] {
-            overscroll-behavior: contain;
-            }
-
-            .lenis.lenis-stopped {
-            overflow: hidden;
-            }
-
-            .lenis.lenis-scrolling iframe {
-            pointer-events: none;
-            }
-
-
-            .cont-scroller {
-                overflow-x: hidden;
-            }
-
-            .cont {
-                display: flex;
-                padding: 24px;
-                justify-content: space-between;
-                border-radius: 8px;
-                margin-top: 24px;
-            }
-            .cont-1 {
-                padding: 24px;
-                width: 49%;
-                background-color: wheat;
-                height: 400px;
-                border-radius: 8px;
-            }
-            .cont-2 {
-                padding: 24px;
-                width: 49%;
-                background-color: #f6e9fe;
-                height: 400px;
-                border-radius: 8px;
-
-            }
-
-            .main-section {
-                height: 100dvh;
-            }
     </style>
   </head>
   <body>
@@ -173,19 +30,24 @@
         <a href="#">About</a>
         <a href="#">Blog</a>
         <a href="#">Portefolio</a>
-        <a href="#">Contact</a>
+        <a href="/contact-us.html">Contact</a>
         <a href="#" type="button" id="logout" class="logout">Log Out</a>
         <div class="animation start-home"></div>
       </nav>
     </section>
-    <!-- <section class="main-bg">
-        <div class="main-bg-back-1"></div>
-        <div class="main-bg-back-2"></div>
-        <div class="main-bg-back-1"></div>
-    </section> -->
 
     <section class="main-section">
-        <section class="svg-container">
+        <section class="svg-container" id="svg-container">
+            <section class="space">
+                <div class="space-boy" id="space-boy">
+                    <img src="/asset/astro-boy.png" alt="">
+                </div>
+            </section>
+            <div class="svg-container-img">
+                <!-- <div class="space-boy ">
+                    <img src="/asset/astro-boy.png" alt="">
+                </div> -->
+            </div>
             <svg view-box="0 0 500 160">
               <g>
                 <path
@@ -200,7 +62,7 @@
                   text-anchor="middle"
                   class="text-body"
                 >
-                  Hello!!!
+                  Welcome!!!
                 </text>
               </g>
             </svg>
@@ -209,17 +71,32 @@
       
             
     </section>
-    <section class="flex justify-center magnetic-items">
-        <button class="magneto mr-4">
-            <span class="magneto-text">
-                Our text
-            </span>
-        </button>
-        <button class="magneto">
-            <span class="magneto-text">
-                Our text
-            </span>
-        </button>
+
+    <section class="flex justify-center magnetic-items good">
+        <div class="goodOne flex">
+            <button class="magneto mr-4">
+                <span class="magneto-text ">
+                    Our text
+                </span>
+            </button>
+            <button class="magneto mr-4">
+                <span class="magneto-text ">
+                    Our text
+                </span>
+            </button>
+        </div>
+        <div class="goodTwo flex">
+            <button class="magneto mr-4">
+                <span class="magneto-text ">
+                    Our text
+                </span>
+            </button>
+            <button class="magneto">
+                <span class="magneto-text">
+                    Our text
+                </span>
+            </button>
+        </div>
         <div id="debugger"></div>
       </section>
     </section>
@@ -241,6 +118,29 @@
         </div>
     </section>
 
+    <!-- horizintal scroll -->
+    <section id="panels">
+        <div id="panels-container" style="width: 500%">
+          <article id="panel-1" class="panel full-screen red">
+              <h2>Panel 1</h2>
+          </article>
+          <article id="panel-2" class="panel full-screen orange">
+              <h2>Panel 2</h2>
+          </article>
+          <article id="panel-3" class="panel full-screen purple">
+              <h2>Panel 3</h2>
+          </article>
+          <article id="panel-4" class="panel full-screen green">
+              <h2>Panel 4</h2>
+          </article>
+          <article id="panel-5" class="panel full-screen gray">
+              <h2>Panel 5</h2>
+          </article>
+        </div>
+      </section>
+
+      <section id="map" class="full-screen"></section>
+
 
 
   </body>
@@ -248,12 +148,15 @@
 <!-- Script -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-
 <!-- Scroll animation -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 
-<!-- basic -->
+
+
+
+
+
   <script type="module">
     
     let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
@@ -314,6 +217,7 @@
         //mouse move stuff
         let activateMagneto = (event) => {
             //get position of the element(magneto) along with h and w
+            
             let boundBox = magnetButton.getBoundingClientRect();
             const magnetoStrength = 40;
             const magnetoTextStrength = 80;
@@ -360,7 +264,7 @@
                 x: 0,
                 y: 0,
                 ease: Power4.easeOut
-            }); 
+            });
 
         
      }
@@ -368,8 +272,7 @@
      magnetButton.addEventListener('mousemove', activateMagneto);
      magnetButton.addEventListener('mouseleave', resetMagneto);
 
-
-    })
+    });
 
 
    
@@ -432,7 +335,104 @@
             tl.fromTo(entryMeta, { xPercent:-110, opacity: 0 },{ xPercent:0, opacity: 1 });
             tl.fromTo(entryMedia, { xPercent:100, opacity: 0 },{ xPercent:0, opacity: 1 },'<');
 
-        })
+        });
+
+        const buttonLeft = document.querySelectorAll('.goodOne');
+        const buttonRight = document.querySelectorAll('.goodTwo');
+       
+        // buttonGood.forEach(entry => {
+        //     let entryOne = entry.querySelectorAll('.goodOne');
+        //     let entryTwo = entry.querySelectorAll('.goodTwo');
+
+
+        //     let tl = gsap.timeline({
+        //         scrollTrigger: {
+        //             trigger: entry,
+        //             start : 'top bottom',
+        //             end: 'bottom 100%',
+        //             scrub : true,
+        //             // markers: true,
+        //         }
+        //     });
+        // })
+        gsap.set(buttonLeft, {
+                xPercent: 0,
+                yPercent: 0,
+                opacity: 1
+            });
+
+            gsap.to(buttonLeft, {
+                scrollTrigger: {
+                    trigger: buttonLeft,
+                    start: 'top 50%',
+                    end: 'bottom top',
+                    scrub : true,
+                    reverse: 0
+                },
+                xPercent: -300,
+                yPercent: 100,
+                opacity: 0
+            });
+
+
+            gsap.set(buttonRight, {
+                xPercent: 0,
+                yPercent: 0,
+                opacity: 1
+            });
+
+            gsap.to(buttonRight, {
+                scrollTrigger: {
+                    trigger: buttonRight,
+                    start: 'top 50%',
+                    end: 'bottom top',
+                    scrub : true,
+                    reverse: 0
+                },
+                xPercent: 300,
+                yPercent: 100,
+                opacity: 0
+            });
+
+            
+            // const contactInfo = document.querySelectorAll(".contact-container");
+
+            // gsap.set(contactInfo, {
+            //     xPercent: 100,
+            //     // yPercent: 0,
+            //     opacity: 0.5
+            // });
+
+            // gsap.to(contactInfo, {
+            //     scrollTrigger: {
+            //         trigger: contactInfo,
+            //         start: 'top bottom',
+            //         end: 'bottom 90%',
+            //         scrub : true,
+            //         reverse: 0
+            //     },
+            //     xPercent: 0,
+            //     // yPercent: 100,
+            //     opacity: 1
+            // });
+
+            const sections = document.querySelectorAll(".contact-child");
+            const contactContainer = document.querySelectorAll(".contact-container");
+            // let sections = gsap.utils.toArray(".panel");
+            entries.forEach(sections => {
+                gsap.to(sections, {
+                xPercent: -100 * (sections.length - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: contactContainer,
+                    pin: true,
+                    scrub: 1,
+                    snap: 1 / (sections.length - 1),
+                    end: () => "+=" + document.querySelectorAll(".contact-container").offsetWidth
+  }
+});
+            })
+
         const lenis = new Lenis()
 
         lenis.on('scroll', ScrollTrigger.update)
@@ -444,4 +444,116 @@
         gsap.ticker.lagSmoothing(0)
 </script>
 
+ <!-- horizontal scroll -->
+ <script>
+    /* Main navigation */
+    let panelsSection = document.querySelector("#panels"),
+      panelsContainer = document.querySelector("#panels-container");
+
+    /* Panels */
+    const panels = gsap.utils.toArray("#panels-container .panel");
+    tween = gsap.to(panels, {
+      // xPercent: -100 * ( panels.length - 1 ),
+      x: () => -1 * (panelsContainer.scrollWidth - innerWidth),
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#panels-container",
+        pin: true,
+        start: "top top",
+        scrub: 1,
+        // snap: {
+        //  snapTo: 1 / (panels.length - 1),
+        //  inertia: false,
+        //  duration: {min: 0.1, max: 0.1}
+        // },
+        end: () => "+=" + (panelsContainer.scrollWidth - innerWidth),
+      },
+    });
+  </script>
+
+
+<!-- space -->
+<script>  
+        const space = document.getElementById('svg-container');
+        const boy = document.getElementById('space-boy');
+        // const boyLocation = Math.ceil(boy.getBoundingClientRect().left);
+
+        let boundBox = space.getBoundingClientRect();
+        
+
+        // console.log(boyLocation)
+
+        //mouse move stuff
+        let activateSpace = (event) => {
+            let boundBox = space.getBoundingClientRect();
+            const magnetoStrength = 40;
+            const magnetoTextStrength = 80;
+
+            const newX = ((event.clientX - boundBox.left)/ space.offsetWidth) - 0.5;
+            const newY = ((event.clientY - boundBox.top)/ space.offsetHeight) - 0.5;
+
+            //move button new position
+            gsap.to(space, {
+                duration: 1,
+                x: newX * 10,
+                y: newY * 10,
+                ease: Power1.easeOut
+            });
+            //move button text new position
+            gsap.to(boy, {
+                duration: 5,
+                x: newX * magnetoTextStrength * 20,
+                y: newY * magnetoTextStrength * 6,
+                ease: Power4.easeOut
+            });
+            // boy.classList.remove("bounce");
+
+            // newBoyLocation();
+            
+        
+        }
+        //mouse leave action
+
+        const resetSpace = (event) => {
+
+            //move button new position
+            gsap.to(space, {
+                duration: 4,
+                x: 0,
+                y: 0,
+                ease: Power4.easeOut
+            });
+            //move button text new position
+            gsap.to(boy, {
+                duration: 1,
+                x: 0,
+                y: 0,
+                ease: Power4.easeOut
+            }); 
+            
+            // setInterval(function() {
+                    // boy.classList.add("bounce");
+            //     }, 4500);
+            
+            // console.log(Math.ceil(boy.getBoundingClientRect().left))
+
+            // newBoyLocation();
+            // if(boy.getBoundingClientRect().left === boyLocation) {
+            //     console.log('same');
+            // }
+
+           
+
+        
+     }
+
+    //  function newBoyLocation() {
+    //     console.log(Math.ceil(boy.getBoundingClientRect().left))
+    //  }
+    // boy.classList.add("bounce");
+     space.addEventListener('mousemove', activateSpace);
+    //  space.addEventListener('mouseleave', resetSpace);
+    // space.addEventListener('mouseleave', ()=>{boy.classList.add("bounce");});
+
+  </script>
 </html>

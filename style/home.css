@@ -1,0 +1,249 @@
+body {
+  /* background-color: transparent;
+     */
+  overflow-x: hidden;
+}
+:root {
+  --loader-text: #f6e9fe;
+}
+
+body {
+  color: var(--loader-text);
+}
+.svg-container {
+    
+  position: relative;
+  z-index: 9;
+  height: 68dvh;
+  width: 100%;
+  /* background-color: rgb(36, 37, 39); */
+  background-color: transparent;
+}
+.svg-container-img {
+    background-image: url('/asset/space-bg.jpeg');
+    background-color: rgb(158, 44, 211);
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+/* .svg-circle {
+height: 100%;
+} */
+svg {
+  width: 100%;
+  height: 50dvh;
+}
+svg text {
+  font-size: 6rem;
+  stroke-width: 3;
+  letter-spacing: -2px;
+}
+svg text.text-body {
+  stroke: var(--loader-text);
+  animation: 10s forwards alternate animate-stroke;
+}
+svg g path {
+  display: none;
+}
+
+@keyframes animate-stroke {
+  0% {
+    fill: transparent;
+    stroke: var(--loader-text);
+    stroke-width: 3;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 32%;
+  }
+  50% {
+    fill: transparent;
+    stroke: var(--loader-text);
+    stroke-width: 3;
+  }
+  80%,
+  100% {
+    fill: var(--loader-text);
+    stroke: transparent;
+    stroke-width: 0;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 32% 0;
+  }
+}
+.nav-container {
+  position: relative;
+  z-index: 9;
+}
+
+/* magnetic button */
+
+.magneto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  order: none;
+  background-color: rgb(91, 91, 170);
+  color: #fff;
+  cursor: pointer;
+}
+#debugger {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #312f2f;
+  color: #fff;
+  padding: 2rem;
+  width: 20rem;
+}
+
+/* Lenes */
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.cont-scroller {
+  overflow-x: hidden;
+}
+
+.cont {
+  display: flex;
+  padding: 24px;
+  justify-content: space-between;
+  border-radius: 8px;
+  margin-top: 24px;
+}
+.cont-1 {
+  padding: 24px;
+  width: 49%;
+  background-color: wheat;
+  height: 400px;
+  border-radius: 8px;
+}
+.cont-2 {
+  padding: 24px;
+  width: 49%;
+  background-color: #f6e9fe;
+  height: 400px;
+  border-radius: 8px;
+}
+
+.main-section {
+  height: 85dvh;
+}
+.good {
+    position: relative;
+    top: -60px;
+    z-index: 10;
+}
+.goodOne,
+.goodTwo {
+  height: 30dvh;
+  /* width: 400px;
+        background-color: rgb(91, 91, 170); */
+}
+.goodOne {
+  /* height: 100%; */
+}
+
+#panels #panels-container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+#panels #panels-container .panel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #333;
+  text-align: left;
+  border-right: 1px solid #f00;
+}
+
+.full-screen {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.space {
+    position: absolute;
+    inset: 0;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  order: none;
+  /* background-color: rgb(91, 91, 170); */
+  color: #fff;
+  cursor: pointer;
+  z-index: 9999;
+}
+.space-boy {
+    position: relative;
+    /* padding-right: 30px;
+    margin-right: 30px; */
+    /* left: -26%; */
+    /* transform: translateX(-30%); */
+    top: 12%;
+    width: 70px;
+    z-index: 999;
+}
+
+.svg-container:not(:hover) .space-boy.bounce  {
+    animation: bounce 3s infinite linear;
+}
+
+@keyframes bounce {
+    0%{
+        transform: translate(0);
+    }
+    25% {
+        transform: translate(-20px);
+    }
+    50% {
+        transform: translate(0px);
+    }
+    75% {
+        transform: translate(20px);
+    }
+
+    100% {
+        transform: translate(0px);
+    }
+}
