@@ -1,0 +1,77 @@
+body {
+    background: url('./../asset/space-bg.jpeg') no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    transition: background .1s;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .containe {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .calc {
+    background-color: white;
+    width: 360px;
+    padding: 18px 16px 24px;
+    border-radius: 8px;
+    position: relative;
+
+  }
+
+  .image-figure {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .image-figure img {
+    width:40%;
+  }
+
+  .title {
+    /* display: inline-block; */
+    font-size: 20px;
+    color: #5fb4d7;
+    text-align: center;
+  }
+
+  input {
+    outline: none;
+  }
+
+
+  .select-cur {
+    background-color: #5fb4d7 !important;
+  }
+
+  .update {
+    display: none;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: #5fb4d7;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+.start-forex-conversion {
+  width: 100%;
+  padding: 6px 20px;
+  border-radius: 6px;
+  background-color: #5fb4d7;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.d-none {
+  display: none;
+}
+ 

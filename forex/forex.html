@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="/calculator/calc.css"> -->
+    <link rel="stylesheet" type="text/css" href="/forex/forex.css">
+    
+
+   
+</head>
+<body>
+    <section class="h-full">
+        <div class="containe">
+            <div class="calc">
+
+                <div class="update" id="fetchApi">
+                    Update Forex
+                </div>
+                <figure class="image-figure flex justify-center">
+                    <img src="./../asset/lll.gif" alt="money">
+                </figure>
+                <h1 class="my-0 mx-auto text-[22px] title">Currency convertor</h1>
+                <div class="start-forex-conversion" id="start">
+                    <p>Start</p>
+                </div>
+
+                <section class="mt-4 flex d-none" id="main-calculator">
+                    <div style="width: 50%;" class="w-[50%] bg-white rounded-md pr-1">
+                        <label for="example-select" class="text-sm font-medium text-gray-600">From Currency:</label>
+                        <div class="mt-1 relative select-cur pr-2 rounded-md">
+                            <select id="forexOne" name="example-select" 
+                             class="select-cur text-white block w-full py-2 pl-3 pr-10 border border-none bg-white rounded-md  focus:outline-none focus:none focus:none">
+                                
+                            </select>
+                            
+                        </div>
+                    </div>
+    
+                    <div style="width: 50%;" class=" bg-white rounded-md pl-1">
+                        <label for="example-select" class="text-sm font-medium text-gray-600">To currency:</label>
+                        <div class="mt-1 relative select-cur pr-2 rounded-md">
+                            <select id="forexTwo" name="example-select" class="select-cur block text-white w-full py-2 pl-3 pr-10 border border-none bg-white rounded-md  focus:outline-none focus:none focus:none">
+                                
+                            </select>
+                            
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="flex">
+                        <div style="width: 50%;" class="w-[50%] bg-white rounded-md pr-1 rounded-md pt-1">
+                            <input id="inputOne" type="text" class="mt-1 px-2 py-1 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300">
+                        </div>
+
+                        <div style="width: 50%;" class="w-[50%] bg-white rounded-md pl-1 rounded-md pt-1">
+                            <input disabled id="inputTwo" type="number" class="mt-1 py-1 px-1 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300">
+                        </div>
+                    </div>
+                </section>
+               
+
+            </div>
+        </div>
+    </section>
+</body>
+<script type="module" src="./forex.js" defer></script>
+    <script type="module" src="../forex/service.js" defer></script>
+
+</html>
